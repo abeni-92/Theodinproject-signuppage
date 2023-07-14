@@ -1,0 +1,240 @@
+*, *::after, *::before {
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    animation: 0.5s fadeIn ease-in-out;
+    position: relative;
+    
+    .left {
+        width: 40vw;
+        position: relative;
+        color: #ccc;
+
+        .odin-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 150px;
+            position: absolute;
+            top: 170px; 
+            left: 0px;
+            background-color: rgba(0,0,0,0.3);
+            img {
+                width: 120px;
+                object-fit: cover;
+                padding: 20px;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        p {
+            margin: 0;
+            position: absolute;
+            bottom: 0px;
+            left: 7.5vw;
+            font-size: 1.2rem;
+    
+            a {
+                color: #ccc;
+            }
+        }
+    }
+    .right {
+        width: 70vw;    
+        background-color: #ccc;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        
+        .header {
+            padding: 0 40px;
+        }
+
+        .form {
+            padding: 20px 40px;
+            background-color: #f0f1f2;
+            width: 100%;
+            margin-bottom: 30px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 4px 4px 4px rgba(0,0,0,0.3);
+            .row {
+                display: flex;
+            }
+            .input {
+                display: flex;
+                flex-direction: column;
+                margin: 0 50px 15px 0;
+                input {
+                    width: 300px;
+                    padding: 8px 0;
+                    outline: none;
+                    border-radius: 4px;
+                    border: 1px solid #ddd; 
+                }
+                input:focus {              
+                    border: 1px solid blue;
+                    box-shadow: 0 4px 4px 0 rgba(0,0,0,0.4);
+                }
+            }
+        }
+        .bottom {
+            padding: 20px 40px;
+
+            button {
+                padding: 10px 50px; 
+                background-color: #f0f1f2;
+                color: #084952;
+                outline: none;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                font-size: 1.2rem;
+                cursor: pointer;
+                transition: 0.2s ease-in-out;
+            }
+
+            button:hover {
+                color: #f0f1f2;
+                background-color: #084952; 
+            }
+            a {
+                color: #084952;
+                transform: scale(0);
+                transition: transform 0.22s ease;
+            }
+            a:hover{
+               transform: scale(1.1);
+            }
+        }
+        
+
+    }
+    
+}
+
+@media (max-width: 900px) {
+    main {
+      height: auto;
+      width: auto;
+      
+      .left { 
+         width: 30vw;
+
+         .odin-logo{
+            img {
+                width: 120px;
+               }
+            h1 {
+                font-size: 1.4rem;
+              }
+           }
+
+         p {
+            left: 0;
+            bottom: 0;
+            right: 0;
+            font-size: 1.1rem;
+          }   
+       }
+        .right {
+            .header {
+                h2 {
+                    font-size: 1.3rem;
+                }
+            }
+            .form {
+                .input {
+                    input {
+                        width: 220px;
+                    }
+                }
+            }
+            .bottom {
+                button {
+                    padding: 10px 20px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 700px) {
+    main {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+      
+        .left {
+            width: 100vw;    
+            .odin-logo {    
+                top: 130px;
+                h1 {
+                    font-size: 2.2rem;
+                }
+            }
+            p {
+               left: 7.5rem;
+            }
+        }
+        .right {
+            padding: 20px;
+            width: 100%; 
+        }
+      } 
+}
+
+@media (max-width: 520px){
+    main {
+        .left {
+            .odin-logo {
+                top: 100px;
+            }
+            p {
+                left: 2rem;
+            }
+        }
+        .right {
+            padding: 0;
+            .form {
+                .row {
+                    display: flex;
+                    flex-direction: column;
+                    .input {
+                        input {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+} 
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
