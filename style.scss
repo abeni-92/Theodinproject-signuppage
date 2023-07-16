@@ -105,10 +105,11 @@ main {
         }
         .error {
             display: none;
-            border: 2px solid rgb(204, 69, 69);
-            padding: 8px;
-            width: 40%;
-            transition: display 1s ease-in-out;
+            color: red;
+            // border: 2px solid rgb(204, 69, 69);
+            // padding: 8px;
+            // width: 40%;
+            // transition: display 1s ease-in-out;
         }
         .bottom {
             padding: 20px 40px;

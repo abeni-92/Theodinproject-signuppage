@@ -9,11 +9,17 @@ form.addEventListener('submit', (e) => {
         error.style.display = 'block';
         password.value = '';
         confirmPassword.value = '';
+        password.style.outline = '1px solid red';
+        confirmPassword.style.outline = '1px solid red';
 
         setTimeout(() => {
             error.style.display = 'none';
-        }, 2000);
+            password.style.outline = 'none';
+            confirmPassword.style.outline = 'none';   
+        }, 1000);
         return
     } 
     form.reset();
+    password.style.outline = 'none';
+    confirmPassword.style.outline = 'none';
 });
