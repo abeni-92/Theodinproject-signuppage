@@ -8,7 +8,7 @@ body {
 
 main {
   display: flex;
-  height: 100vh;
+  min-height: 100vh;
   width: 100vw;
   animation: 0.5s fadeIn ease-in-out;
   position: relative; }
@@ -45,7 +45,7 @@ main {
       main .left p a {
         color: #ccc; }
   main .right {
-    width: 70vw;
+    width: 60vw;
     background-color: #ccc;
     display: flex;
     flex-direction: column;
@@ -53,10 +53,13 @@ main {
     align-items: start; }
     main .right .header {
       padding: 0 40px; }
+    main .right form {
+      display: flex;
+      flex-direction: column; }
     main .right .form {
       padding: 20px 40px;
       background-color: #f0f1f2;
-      width: 100%;
+      width: 60vw;
       margin-bottom: 30px;
       display: flex;
       flex-direction: column;
@@ -64,11 +67,11 @@ main {
       main .right .form .row {
         display: flex; }
       main .right .form .input {
+        flex: 1;
         display: flex;
         flex-direction: column;
         margin: 0 50px 15px 0; }
         main .right .form .input input {
-          width: 300px;
           padding: 8px 0;
           outline: none;
           border-radius: 4px;
@@ -76,6 +79,12 @@ main {
         main .right .form .input input:focus {
           border: 1px solid blue;
           box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.4); }
+    main .right .error {
+      display: none;
+      border: 2px solid #cc4545;
+      padding: 8px;
+      width: 40%;
+      transition: display 1s ease-in-out; }
     main .right .bottom {
       padding: 20px 40px; }
       main .right .bottom button {
@@ -87,7 +96,7 @@ main {
         border-radius: 4px;
         font-size: 1.2rem;
         cursor: pointer;
-        transition: 0.2s ease-in-out; }
+        transition: 0.1s ease-in-out; }
       main .right .bottom button:hover {
         color: #f0f1f2;
         background-color: #084952; }
@@ -99,50 +108,66 @@ main {
         transform: scale(1.1); }
 
 @media (max-width: 900px) {
-  main {
-    height: auto;
-    width: auto; }
-    main .left {
-      width: 30vw; }
-      main .left .odin-logo img {
-        width: 120px; }
-      main .left .odin-logo h1 {
-        font-size: 1.4rem; }
-      main .left p {
-        left: 0;
-        bottom: 0;
-        right: 0;
-        font-size: 1.1rem; }
+  main .left {
+    width: 30vw; }
+    main .left .odin-logo img {
+      width: 120px; }
+    main .left .odin-logo h1 {
+      font-size: 1.4rem; }
+    main .left p {
+      left: 0;
+      bottom: 0;
+      right: 0;
+      font-size: 1.1rem; }
+  main .right {
+    width: 70vw;
+    padding: 0px; }
     main .right .header h2 {
       font-size: 1.3rem; }
-    main .right .form .input input {
-      width: 220px; }
+    main .right .form {
+      width: 100%; }
     main .right .bottom button {
       padding: 10px 20px; } }
 @media (max-width: 700px) {
   main {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start; }
+    align-items: start;
+    justify-content: start; }
     main .left {
       width: 100vw; }
       main .left .odin-logo {
-        top: 130px; }
+        top: 150px; }
         main .left .odin-logo h1 {
           font-size: 2.2rem; }
       main .left p {
-        left: 7.5rem; }
+        left: 10rem; }
     main .right {
-      padding: 20px;
-      width: 100%; } }
+      width: 100vw;
+      padding: 30px; }
+      main .right form {
+        width: 100%; }
+      main .right .form {
+        width: 100%;
+        margin-bottom: 10px; }
+      main .right .bottom {
+        padding: 20px 0; }
+        main .right .bottom button {
+          padding: 10px 30px; } }
 @media (max-width: 520px) {
   main .left .odin-logo {
+    height: 120px;
     top: 100px; }
+    main .left .odin-logo img {
+      height: 120px;
+      object-fit: contain; }
   main .left p {
-    left: 2rem; }
+    left: 3rem; }
   main .right {
-    padding: 0; }
+    padding: 20px 0; }
+    main .right form {
+      padding: 20px;
+      width: 100%; }
     main .right .form .row {
       display: flex;
       flex-direction: column; }

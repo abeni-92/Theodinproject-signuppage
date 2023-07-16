@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="script.js" defer></script>
     <title>Sign Up</title>
 </head>
 <body>
@@ -24,43 +25,48 @@
                      <h2>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem veniam dolorem velit delectus doloribus</h2>
                      <h4>You <em>know</em> you want to.</h4>
                 </div>
-                <div class="form" action="#" method="post">
-                    <h2>Let's do this</h2>
-                    <div class="row">
-                        <div class="input">
-                            <label for="fname">First Name</label>
-                            <input type="text">
+                <form>
+                    <div class="form">
+                        <h2>Let's do this</h2>
+                        <div class="row">
+                            <div class="input">
+                                <label for="fname">First Name</label>
+                                <input type="text" required>
+                            </div>
+                            <div class="input">
+                                <label for="lname">Last Name</label>
+                                <input type="text" required>
+                            </div>  
                         </div>
-                        <div class="input">
-                             <label for="lname">Last Name</label>
-                            <input type="text">
-                        </div>  
+                        <div class="row">
+                            <div class="input">
+                                <label for="email">Email</label>
+                                <input type="email" required>
+                            </div>
+                            <div class="input">
+                                <label for="Phone">Phone Number</label>
+                                <input type="number" required>
+                            </div> 
+                        </div>
+                        <div class="row">
+                            <div class="input">
+                                <label for="password">Password</label>
+                                <input type="password" id="password" required>
+                            </div>
+                            <div class="input">
+                                <label for="confirm-password">Confirm Password</label>
+                                <input type="password" id="confirm-password" required>
+                            </div>
+                        </div>
+                        <div class="error">
+                            Password doesn't Match!
+                        </div>
+                    </div>    
+                    <div class="bottom">
+                        <button>Create Account</button>
+                        <p>Already have an account? <a href="#">Log in</a></p>
                     </div>
-                    <div class="row">
-                        <div class="input">
-                            <label for="email">Email</label>
-                            <input type="email">
-                        </div>
-                        <div class="input">
-                            <label for="Phone">Phone Number</label>
-                            <input type="tel">
-                        </div> 
-                    </div>
-                    <div class="row">
-                        <div class="input">
-                            <label for="password">Password</label>
-                            <input type="password">
-                        </div>
-                        <div class="input">
-                            <label for="confirm-password">Confirm Password</label>
-                            <input type="password">
-                        </div>
-                    </div>
-                </div>    
-                <div class="bottom">
-                    <button>Create Account</button>
-                    <p>Already have an account? <a href="#">Log in</a></p>
-                </div>
+                </form>
         </div>  
     </main>
 </body>

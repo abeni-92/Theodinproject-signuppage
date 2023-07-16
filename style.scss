@@ -10,7 +10,7 @@ body {
 
 main {
     display: flex;
-    height: 100vh;
+    min-height: 100vh;
     width: 100vw;
     animation: 0.5s fadeIn ease-in-out;
     position: relative;
@@ -58,7 +58,7 @@ main {
         }
     }
     .right {
-        width: 70vw;    
+        width: 60vw;    
         background-color: #ccc;
         display: flex;
         flex-direction: column;
@@ -69,10 +69,15 @@ main {
             padding: 0 40px;
         }
 
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
         .form {
             padding: 20px 40px;
             background-color: #f0f1f2;
-            width: 100%;
+            width: 60vw;
             margin-bottom: 30px;
             display: flex;
             flex-direction: column;
@@ -81,11 +86,12 @@ main {
                 display: flex;
             }
             .input {
+                flex: 1;
                 display: flex;
                 flex-direction: column;
                 margin: 0 50px 15px 0;
                 input {
-                    width: 300px;
+                    // width: 300px;
                     padding: 8px 0;
                     outline: none;
                     border-radius: 4px;
@@ -96,6 +102,13 @@ main {
                     box-shadow: 0 4px 4px 0 rgba(0,0,0,0.4);
                 }
             }
+        }
+        .error {
+            display: none;
+            border: 2px solid rgb(204, 69, 69);
+            padding: 8px;
+            width: 40%;
+            transition: display 1s ease-in-out;
         }
         .bottom {
             padding: 20px 40px;
@@ -109,7 +122,7 @@ main {
                 border-radius: 4px;
                 font-size: 1.2rem;
                 cursor: pointer;
-                transition: 0.2s ease-in-out;
+                transition: 0.1s ease-in-out;
             }
 
             button:hover {
@@ -133,9 +146,7 @@ main {
 
 @media (max-width: 900px) {
     main {
-      height: auto;
-      width: auto;
-      
+ 
       .left { 
          width: 30vw;
 
@@ -148,26 +159,26 @@ main {
               }
            }
 
-         p {
+          p {
             left: 0;
             bottom: 0;
             right: 0;
             font-size: 1.1rem;
-          }   
+           }   
        }
         .right {
+            width: 70vw;
+            padding: 0px;
             .header {
                 h2 {
                     font-size: 1.3rem;
                 }
             }
+
             .form {
-                .input {
-                    input {
-                        width: 220px;
-                    }
-                }
-            }
+                width: 100%;
+            }            
+            
             .bottom {
                 button {
                     padding: 10px 20px;
@@ -181,54 +192,76 @@ main {
     main {
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
-        justify-content: flex-start;
+        align-items: start;
+        justify-content: start;
       
         .left {
             width: 100vw;    
             .odin-logo {    
-                top: 130px;
+                top: 150px;
                 h1 {
                     font-size: 2.2rem;
                 }
             }
             p {
-               left: 7.5rem;
+               left: 10rem;
             }
         }
         .right {
-            padding: 20px;
-            width: 100%; 
+            width: 100vw; 
+            padding: 30px;
+            form {
+                width: 100%;
+            }
+            .form {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+            .bottom {
+                padding: 20px 0;
+                button {
+                    padding: 10px 30px;
+                }
+            }
         }
       } 
 }
 
 @media (max-width: 520px){
-    main {
-        .left {
-            .odin-logo {
-                top: 100px;
+        main {
+            .left {
+                .odin-logo {
+                    height: 120px;
+                    top: 100px;
+                    img {
+                        height: 120px;
+                        object-fit: contain;
+                    }
+                }
+                p {
+                    left: 3rem;
+                }
             }
-            p {
-                left: 2rem;
-            }
-        }
-        .right {
-            padding: 0;
-            .form {
-                .row {
-                    display: flex;
-                    flex-direction: column;
-                    .input {
-                        input {
-                            width: 100%;
+            .right {
+                padding: 20px 0;
+                form {
+                    padding: 20px;
+                    width: 100%;
+                }
+                .form {      
+                    .row {
+                        display: flex;
+                        flex-direction: column;
+                        .input {
+                            input {
+                                width: 100%;
+                            }
                         }
                     }
                 }
             }
         }
-    }
-} 
+    } 
 
 @keyframes fadeIn {
     0% {
