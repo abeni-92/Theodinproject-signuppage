@@ -59,7 +59,7 @@ main {
     }
     .right {
         width: 60vw;    
-        background-color: #ccc;
+        background-color: #eee;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -72,11 +72,12 @@ main {
         form {
             display: flex;
             flex-direction: column;
+			width: 100%;
         }
 
         .form {
             padding: 20px 40px;
-            background-color: #f0f1f2;
+            background-color: #c2e0de;
             width: 60vw;
             margin-bottom: 30px;
             display: flex;
@@ -104,12 +105,15 @@ main {
             }
         }
         .error {
+			transition: opacity 0.4s ease-in-out;
             display: none;
-            color: red;
-            // border: 2px solid rgb(204, 69, 69);
-            // padding: 8px;
-            // width: 40%;
-            // transition: display 1s ease-in-out;
+            color: #fff;
+			width: 50%;
+			font-weight: 500;
+			background-color: rgb(224, 146, 146);
+			padding: 10px;
+			border: 1px solid rgb(224, 146, 146);
+			border-radius: 4px;
         }
         .bottom {
             padding: 20px 40px;

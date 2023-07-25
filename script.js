@@ -16,7 +16,7 @@ form.addEventListener('submit', (e) => {
             error.style.display = 'none';
             password.style.outline = 'none';
             confirmPassword.style.outline = 'none';   
-        }, 1000);
+        }, 2000);
         return
     } 
     form.reset();
